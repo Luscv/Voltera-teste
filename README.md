@@ -17,8 +17,8 @@ Uma aplicação web que advinha a idade de uma pessoa baseada no seu nome usando
 
 1. **Clone o repositório**
    ```bash
-   git clone <url-do-seu-repositório>
-   cd voltera-frontend-test
+   git clone https://github.com/Luscv/Voltera-teste
+   cd Voltera-teste
    ```
 
 2. **Instale as dependências**
