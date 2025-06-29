@@ -1,40 +1,47 @@
-# SvelteKit Test App
+# 🧙 AgeVinhador 🔮 - Teste Técnico
 
-Bem vindo! Esta é uma entediante aplicação de teste.
+Uma aplicação web que advinha a idade de uma pessoa baseada no seu nome usando a API [agify.io](https://agify.io). Construída com SvelteKit e Svelte 5.
 
-O que deverá ser feito: uma aplicação web que consulta a API gratuita em [agify.io](https://api.agify.io) e retorna o resultado. Esta API toma um nome próprio e devolve uma estimativa altamente precisa da idade de uma pessoa com o dado nome. Veja a [documentação da API](https://agify.io/documentation) para maiores detalhes. Você deverá construir basicamente um _front end_ diferente para esta simples API.
+## ✨ Funcionalidades
 
-## Requisitos
+- Busca em Tempo Real
+- Debounce
+- URLs Compartilháveis: Copie e cole URLs com resultados de busca (ex: `?name=João`)
+- Design Responsivo
+- Performance Rápida: Renderização no servidor com SvelteKit para performance otimizada
+- Acessibilidade: Labels ARIA apropriados e HTML semântico
 
-- Deve haver um input de texto onde o usuário digita um nome.
-- Ao digitar o nome, a consulta à API deve ser feita e o resultado exibido na tela:
-	- O usuário não precisa apertar Enter ou pressionar nenhum botão: basta esperar depois que digitou para receber o resultado. (Dica: _debounce_ de 500-1000ms.)
-- Você **deve** usar SvelteKit e Svelte 4 ou 5.
-- Você **deve** usar a função `load()` do SvelteKit para requisitar a API. Pode ser um `load()` no servidor ou universal, tanto faz, contanto que a requisição aconteça num `load()`.
-- Você **deve** garantir que a URL seja modificada com o nome digitado: por exemplo, usando uma _querystring_. Essa URL deve poder ser copiada e colada e refletir o mesmo resultado da chamada à API. Um exemplo de URL poderia ser `http://localhost:5173/?name=Jebediah`.
-- Não consulte a API se o nome estiver vazio.
-- Produza HTML 5 válido.
-- Use sua criatividade no CSS (é só um input de texto e uma ou mais linhas de texto com o resultado, difícil estilizar muita coisa aqui, mas tente se distanciar da aparência padrão do navegador). Use **apenas CSS puro** feito por você: nada de LESS/SASS/Stylus/Tailwind/Bootstrap/Normalize.css e afins.
-- Use Git.
-- Não adicione nenhuma biblioteca como dependência, pois não é necessário; ou seja, mantenha o package.json como está, a não ser que deseje utilizar Typescript ou JS Doc e isso requeira alguma biblioteca adicional – nesse caso, tudo bem alterar o package.json.
+## 📦 Instalação e Configuração
 
-## _Rate limit_
+### Início Rápido
 
-A API que sua aplicação deverá consultar possui um limite de 100 requisições por dia. Cuidado para não esgotar esse limite enquanto testa (ou terá que aguardar virar o dia)!
+1. **Clone o repositório**
+   ```bash
+   git clone <url-do-seu-repositório>
+   cd voltera-frontend-test
+   ```
 
-## Como enviar
+2. **Instale as dependências**
+   ```bash
+   npm install
+   ```
 
-A única forma aceita de envio do seu teste é hospedando seu código numa hospedagem Git e nos mandando o link para o seu repositório. Há várias alternativas: GitHub, GitLab, Bitbucket, Codeberg, Sourcehut etc.
+3. **Inicie o servidor de desenvolvimento**
+   ```bash
+   npm run dev
+   ```
 
-## FAQ
+4. **Abra seu navegador**
+   Navegue para `http://localhost:5173`
 
-- posso usar Typescript? pode (faça as modificações necessárias; nesse caso, é permitido alterar o package.json).
-- posso usar JS Doc: pode (faça as modificações necessárias; nesse caso, é permitido alterar o package.json).
-- posso usar fontes (typefaces) do Google Fonts? pode.
-- devo colocar o CSS num arquivo separado ou junto dos componentes? tanto faz, a escolha é a seu critério, inclusive pode colocar parte num arquivo separado e parte nos componentes se quiser.
-- tab ou espaços? os arquivos default do SvelteKit são indentandos com tab, mas nos arquivos feitos por você tanto faz.
-- precisa se preocupar com tratamento de erros (404 e afins)? não; inclusive sua aplicação pode ignorar eventuais erros de _rate limit_ (_429 Too many requests_), como se nunca acontecessem.
-- precisa lintar os arquivos ou aderir a algum padrão de código-fonte? não.
-- precisa ter algum teste automatizado? não.
-- precisa se preocupar com desempenho de carregamento da página? não.
-- precisa se preocupar com localização ([https://agify.io/documentation#localization](https://agify.io/documentation#localization))? não.
+
+
+Este projeto faz parte de um teste técnico para a Voltera.
+
+
+
+
+
+
+
+
