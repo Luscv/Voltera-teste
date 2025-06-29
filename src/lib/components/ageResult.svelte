@@ -1,19 +1,24 @@
 <script>
-    export let age
-
+    /** @type {import('./$types').PageData} */
+    export let data;
+    
+    $: ageData = data?.ageData;
+    $: name = ageData?.name;
+    $: age = ageData?.age;
+    $: count = ageData?.count;
 </script>
 
 <div class="result-container">
-    {#if !name}
-        {#if age}
+    {#if ageData}
+        {#if age !== null}
             <div class="result-card">
                 <h2>A idade de {name} é:</h2>
-                <p>{age} 34</p>
+                <p class="age">{age} anos</p>
             </div>
         {:else}
-            <div class="loading-card">
-                <div class="loading-spinner"></div>
-                <p>Consultando a API...</p>
+            <div class="no-result-card">
+                <h2>Não foi possível advinhar a idade</h2>
+                <p>O nome "{name}" não foi encontrado.</p>
             </div>
         {/if}
     {:else}
@@ -26,11 +31,11 @@
 </div>
 
 <style>
-    .result-container{
+    .result-container {
         width: 100%;
 	}
 
-    .result-card, .empty-result, .loading-card{
+    .result-card, .empty-result, .no-result-card{
         border-radius: 20px;
 		padding: 2rem;
 		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -48,24 +53,25 @@
         color: #666;
     }
 
-    .result-card p{
-        font-size: 2rem;
+    .age{
+        font-size: 3rem;
 		line-height: 1.6;
-		color: #333;
+		color: #bcadca;
+        font-weight: bold;
+        margin: 1rem 0;
     }
 
-    .loading-spinner {
-		width: 40px;
-		height: 40px;
-		border: 4px solid #f3f3f3;
-		border-top: 4px solid #667eea;
-		border-radius: 50%;
-		animation: spin 1s linear infinite;
-		margin: 0 auto 1rem;
-	}
+    .result-card h2{
+        color: #333;
+        margin-bottom: 1rem;
+    }
 
-    @keyframes spin {
-		0% { transform: rotate(0deg); }
-		100% { transform: rotate(360deg); }
-	}
+    .no-result-card h2{
+        color: #e74c3c;
+        margin-bottom: 1rem;
+    }
+
+    .no-result-card p{
+        color: #666;
+    }
 </style>

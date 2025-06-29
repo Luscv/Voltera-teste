@@ -3,6 +3,9 @@
     import '../lib/styles/global.css'
     import SearchInput from '$lib/components/searchInput.svelte'
     import AgeResult from '$lib/components/ageResult.svelte'
+    import { page } from '$app/stores'
+
+    $: data = $page.data
 </script>
 
 <svelte:head>
@@ -21,7 +24,7 @@
             <SearchInput/>
         </div>
         <div class="result-section">
-            <AgeResult/>
+            <AgeResult {data}/>
         </div>
     </div>
 </main>
